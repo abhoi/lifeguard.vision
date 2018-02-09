@@ -22,18 +22,18 @@
 				<!-- Header -->
 					<header id="header" class="alt">
 						<span class="logo"><img src="images/logo.svg" alt="" /></span>
-						<h1>Stellar</h1>
-						<p>Just another free, fully responsive site template<br />
-						built by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a>.</p>
+						<h1>Lifeguard.vision</h1>
+						<p>A 3D CNN system to detect drowning people in swimming pools<br />
+						created by Sid, Amlaan, and Chetan</p>
 					</header>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a href="#intro" class="active">Introduction</a></li>
-							<li><a href="#first">First Section</a></li>
-							<li><a href="#second">Second Section</a></li>
-							<li><a href="#cta">Get Started</a></li>
+							<li><a href="#intro" class="active">Inspiration</a></li>
+							<li><a href="#first">What It Does</a></li>
+							<li><a href="#second">How We Built It</a></li>
+							<li><a href="#cta">What's Coming</a></li>
 						</ul>
 					</nav>
 
@@ -45,56 +45,53 @@
 								<div class="spotlight">
 									<div class="content">
 										<header class="major">
-											<h2>Ipsum sed adipiscing</h2>
+											<h2>Inspiration</h2>
 										</header>
-										<p>Sed lorem ipsum dolor sit amet nullam consequat feugiat consequat magna
-										adipiscing magna etiam amet veroeros. Lorem ipsum dolor tempus sit cursus.
-										Tempus nisl et nullam lorem ipsum dolor sit amet aliquam.</p>
-										<ul class="actions">
+										<p>In Freakonomics, there is an entire chapter showing that pools are more dangerous to people in the US than guns and that got us thinking about how these tragic accidents due to pools could be prevented and how we could save lives in any way possible. When we started looking at the statistics about drowning deaths in the US we saw that drowning is the second leading cause of injury related death for children under 15 and that for the majority of cases of child drownings there are adults supervising but they simply don't pay attention for a short amount of time or do not realize that there is a drowning happening. We realized that using machine learning and visual image processing we could develop a way to detect if anyone is drowning in a live video feed and then send an alert immediately if we detect that someone is drowning.</p>
+										<!--<ul class="actions">
 											<li><a href="generic.html" class="button">Learn More</a></li>
-										</ul>
+										</ul>-->
 									</div>
-									<span class="image"><img src="images/pic01.jpg" alt="" /></span>
+									<span class="image"><img src="images/lifeguard.jpg" alt="" /></span>
 								</div>
 							</section>
 
 						<!-- First Section -->
 							<section id="first" class="main special">
 								<header class="major">
-									<h2>Magna veroeros</h2>
+									<h2>What It Does</h2>
 								</header>
 								<ul class="features">
 									<li>
 										<span class="icon major style1 fa-code"></span>
-										<h3>Ipsum consequat</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+										<h3>Action Detection</h3>
+										<p>Our machine learning model can take in a live video feed of people swimming in a swimming pool and can detect whether anyone is drowning.</p>
 									</li>
 									<li>
 										<span class="icon major style3 fa-copy"></span>
-										<h3>Amed sed feugiat</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+										<h3>Object Localization</h3>
+										<p>If drowning is detected, a bounding box is placed around the person drowning with considerable accuracy and speed.</p>
 									</li>
 									<li>
 										<span class="icon major style5 fa-diamond"></span>
-										<h3>Dolor nullam</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+										<h3>Live Updates</h3>
+										<p>The person in-charge of overseeing the swimming pool is swiftly alerted about the person drowning and an emergency message and request is sent to concerned personnel.</p>
 									</li>
 								</ul>
-								<footer class="major">
+								<!--<footer class="major">
 									<ul class="actions">
 										<li><a href="generic.html" class="button">Learn More</a></li>
 									</ul>
-								</footer>
+								</footer>-->
 							</section>
 
 						<!-- Second Section -->
 							<section id="second" class="main special">
 								<header class="major">
-									<h2>Ipsum consequat</h2>
-									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
+									<h2>How We Built It</h2>
+									<p>Microsoft CNTK, OpenCV, Python</p>
 								</header>
-								<ul class="statistics">
+								<!--<ul class="statistics">
 									<li class="style1">
 										<span class="icon fa-code-fork"></span>
 										<strong>5,120</strong> Etiam
@@ -115,26 +112,25 @@
 										<span class="icon fa-diamond"></span>
 										<strong>1,024</strong> Nullam
 									</li>
-								</ul>
-								<p class="content">Nam elementum nisl et mi a commodo porttitor. Morbi sit amet nisl eu arcu faucibus hendrerit vel a risus. Nam a orci mi, elementum ac arcu sit amet, fermentum pellentesque et purus. Integer maximus varius lorem, sed convallis diam accumsan sed. Etiam porttitor placerat sapien, sed eleifend a enim pulvinar faucibus semper quis ut arcu. Ut non nisl a mollis est efficitur vestibulum. Integer eget purus nec nulla mattis et accumsan ut magna libero. Morbi auctor iaculis porttitor. Sed ut magna ac risus et hendrerit scelerisque. Praesent eleifend lacus in lectus aliquam porta. Cras eu ornare dui curabitur lacinia.</p>
-								<footer class="major">
+								</ul>-->
+                                <p class="content">We first had to build our own dataset of videos of people drownings as there were no available data sets that contained this action information. To do this we found all the videos we could that contained people drowning and then we isolated the action of drowning from the video using VoTT and iMovie. We also used actions of those who were not drowning as a separate class and these actions were taken from the same dataset from people who were in the same pool as those who were drowning. We then tested multiple models on microsoft azure on their data science virtual machine to try and correctly detect the action of drowning from a video until we landed on using a 3 dimensional convolutional net that was capable of analyzing spatiotemporal information. To implement this model we used the microsoft cognitive toolkit (CNTK) on the virtual machine. We used to send out the real time notification when a drowning was detected.</p>
+								<!--<footer class="major">
 									<ul class="actions">
 										<li><a href="generic.html" class="button">Learn More</a></li>
 									</ul>
-								</footer>
+								</footer>-->
 							</section>
 
 						<!-- Get Started -->
 							<section id="cta" class="main special">
 								<header class="major">
-									<h2>Congue imperdiet</h2>
-									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
+									<h2>What's Coming</h2>
+                                    <p>We want to publish our dataset so that future researchers can use the same data to create better models to save lives and we hope that eventually all personal and residential pools have a camera watching over them (a small cost in comparison to the cost of a pool) so that all drowning deaths that can be prevented are.</p>
 								</header>
 								<footer class="major">
 									<ul class="actions">
-										<li><a href="generic.html" class="button special">Get Started</a></li>
-										<li><a href="generic.html" class="button">Learn More</a></li>
+										<li><a href="generic.html" class="button special">Checkout our Devpost project page!</a></li>
+										<!--<li><a href="generic.html" class="button">Learn More</a></li>-->
 									</ul>
 								</footer>
 							</section>
@@ -144,13 +140,13 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<section>
-							<h2>Aliquam sed mauris</h2>
-							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
-							<ul class="actions">
+							<center><h2>Who We Are</h2></center>
+							<center><p>Three students from Cornell, IIT, and UIC who came together to make this project at HackHarvard 2017.</p></center>
+							<!--<ul class="actions">
 								<li><a href="generic.html" class="button">Learn More</a></li>
-							</ul>
+							</ul>-->
 						</section>
-						<section>
+						<!--<section>
 							<h2>Etiam feugiat</h2>
 							<dl class="alt">
 								<dt>Address</dt>
@@ -167,8 +163,8 @@
 								<li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
 								<li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
 							</ul>
-						</section>
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						</section>-->
+						<!--<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>-->
 					</footer>
 
 			</div>
