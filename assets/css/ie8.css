@@ -1,57 +1,66 @@
 /*
-	Escape Velocity by HTML5 UP
+	Stellar by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-/* Basic */
+/* Type */
 
-	form input[type="text"],
-	form input[type="email"],
-	form input[type="password"],
-	form select,
-	form textarea {
+	body {
+		color: #ffffff;
+	}
+
+/* Button */
+
+	.button {
+		position: relative;
+		border: solid 1px !important;
+	}
+
+		.button.special {
+			border: none !important;
+		}
+
+/* Icon */
+
+	.icon.major {
+		-ms-behavior: url("assets/js/ie/PIE.htc");
+	}
+
+		.icon.major:before {
+			font-size: 4em;
+			border: 0;
+		}
+
+/* Spotlight */
+
+	.spotlight .image {
 		position: relative;
 		-ms-behavior: url("assets/js/ie/PIE.htc");
 	}
 
-	input[type="button"],
-	input[type="submit"],
-	input[type="reset"] {
-		position: relative;
-		-ms-behavior: url("assets/js/ie/PIE.htc");
+		.spotlight .image img {
+			position: relative;
+			-ms-behavior: url("assets/js/ie/PIE.htc");
+		}
+
+/* Features */
+
+	.features li {
+		width: 29%;
 	}
 
-	.button,
-	#intro > .style2,
-	#copyright ul,
-	#nav > ul,
-	.dropotron {
-		position: relative;
-		-ms-behavior: url("assets/js/ie/PIE.htc");
+/* Footer */
+
+	#footer > * {
+		width: 50%;
+		margin-left: 0;
 	}
 
-/* Section/Article */
+/* Main */
 
-	section > .last-child,
-	article > .last-child,
-	section.last-child,
-	article.last-child {
-		margin-bottom: 0;
-	}
-
-/* Wrappers */
-
-	.wrapper .title:before, .wrapper .title:after {
-		display: none;
-	}
-
-	#header-wrapper {
-		-ms-behavior: url("assets/js/ie/backgroundsize.min.htc");
-	}
-
-/* Copyright */
-
-	#copyright {
-		margin: 0;
+	#main > .main > .image.main:first-child {
+		margin-top: 0;
+		margin-left: 0;
+		width: 100%;
 	}
